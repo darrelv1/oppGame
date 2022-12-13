@@ -18,8 +18,6 @@ keys.addEventListener("click", (e) => {
 
     if(e.target.nodeName === "BUTTON" ){
 
-        console.log(e.target)
-        console.log("Click button")
         game.handleInteraction(e.target)
 
     }

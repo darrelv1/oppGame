@@ -11,34 +11,32 @@ class Game {
         this.missed = 0;
         //an array of five Phrase objects to use with the game. A phrase should only include letters and spaces— no numbers, punctuation or other special characters
         this.phrases = [
-            new Phrase("Claudia farts stink"),
-            new Phrase("Darrel is Hilarious"),
-            new Phrase("Their Great"),
-            new Phrase("Mateo is a chancho BURT"),
-            new Phrase("christmas is almost here"),
+            new Phrase("Make a wish"),
+            new Phrase("Another one bites the dust"),
+            new Phrase("Viva los vegas"),
+            new Phrase("dont worry be happy"),
+            new Phrase("break a leg"),
         ];
         //This is the Phrase object that’s currently in play.
         this.activePhrase = null;
     }
 
+    //Commence the game
     startGame() {
         document.querySelector("#overlay").style.display = "none"
         this.activePhrase = this.getRandomPhrase();
-        this.activePhrase.addPhraseToDisplay(this.activePhrase);
+       this.activePhrase.addPhraseToDisplay(this.activePhrase);
     }
 
+    //automatically picks out a random phrase
     getRandomPhrase() {
-
         //randomly calls on
         const len = this.phrases.length;
         const randNum = Math.floor(Math.random() * len);
         return this.phrases[randNum];
     }
-
-
+    //checks for wins
     handleInteraction(letterObj) {
-
-
         if (this.activePhrase.checkLetter(letterObj.innerText)) {
             letterObj.classList.add("chosen");
             this.activePhrase.showMatchedLetter(letterObj.innerText)
@@ -48,10 +46,7 @@ class Game {
         } else {
             letterObj.classList.add("wrong");
             this.removeLife();
-
         }
-
-        // checkforWin();
     }
 
     removeLife() {
@@ -71,7 +66,6 @@ class Game {
     //counts the number of hidden li's to determine if player won
     checkForWin() {
         const countOfHide = document.querySelectorAll(".letter.hide").length;
-        console.log((countOfHide === 0) && (this.missed < 5))
         return (countOfHide === 0) && (this.missed < 5)
     }
 
@@ -99,8 +93,8 @@ class Game {
         const allKeys = Array.from(document.querySelectorAll(".key"))
 
         allKeys.forEach(ele => {
-                ele.classList.contains("wrong") ? ele.classList.remove("wrong") : console.log("not here");
-                ele.classList.contains("chosen") ? ele.classList.remove("chosen") : console.log("not here either")
+                ele.classList.contains("wrong") && ele.classList.remove("wrong")
+                ele.classList.contains("chosen") && ele.classList.remove("chosen")
             }
         )
 

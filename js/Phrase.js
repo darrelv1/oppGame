@@ -12,6 +12,7 @@ class Phrase {
 
 
    addPhraseToDisplay(chosenPhrase) {
+        if (chosenPhrase != null ){
         const listing = document.querySelector("#phrase ul")
 
        const phraseArray = chosenPhrase.phrase.split("")
@@ -19,7 +20,7 @@ class Phrase {
            return listing.concat("\n"+letterValidator(word))
            }, "");
 
-        listing.innerHTML = result
+        listing.innerHTML = result}
 
     }
 
@@ -35,7 +36,6 @@ class Phrase {
        charsCollection.forEach( char => {
                char.classList.remove("hide");
                char.classList.add("show");
-
        })
 
     }
