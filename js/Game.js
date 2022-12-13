@@ -2,7 +2,7 @@
  * Project 4 - OOP Game App
  * Game.js */
 
-import {Phrase} from "./Phrase.js";
+
 
 class Game {
 
@@ -48,9 +48,8 @@ class Game {
             this.removeLife();
         }
     }
-
+    //moderates the css hearts and the missed counter property
     removeLife() {
-
         const hearts = document.querySelector("#scoreboard ol").children;
         const lives = hearts.length
         this.missed += 1;
@@ -69,6 +68,7 @@ class Game {
         return (countOfHide === 0) && (this.missed < 5)
     }
 
+    //overlay, condiitonal message of win or lose, will reset the game
     gameOver() {
         document.querySelector("#overlay").style.display = "block"
         let win_Loser = document.querySelector("#game-over-message")
@@ -86,9 +86,8 @@ class Game {
 
 
     }
-
+    //resets the keys, phrase to display , missed prop and  hearts variable
     reset() {
-
         //clear all the css adjustment for keys
         const allKeys = Array.from(document.querySelectorAll(".key"))
 
@@ -110,7 +109,7 @@ class Game {
         //reset phrase to display
         document.querySelector("#phrase ul").innerHTML= "";
 
-        //reset the overlay
+
 
     }
 
@@ -119,4 +118,3 @@ class Game {
 
 }
 
-export {Game}

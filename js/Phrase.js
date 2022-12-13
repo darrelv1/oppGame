@@ -1,7 +1,7 @@
 /* Treehouse FSJS Techdegree
  * Project 4 - OOP Game App
  * Phrase.js */
-import {letterValidator} from './Tools.js'
+
 
 
 class Phrase {
@@ -42,4 +42,3 @@ class Phrase {
 }
 
 
-export {Phrase}

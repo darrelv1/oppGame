@@ -1,4 +1,4 @@
-
+//Helper Functions - an attempt to practise modularizing my code a bit
 const REGEX_GAME = {
 
     spaceEXP : / /,
@@ -14,4 +14,3 @@ const letterValidator = (character) => {
          return `<li class='space'> </li>`
 }
 
-export {REGEX_GAME, letterValidator}
