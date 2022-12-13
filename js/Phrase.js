@@ -24,18 +24,22 @@ class Phrase {
     }
 
 
+    checkLetter(letter) {
+        return this.phrase.includes(letter)
+    }
 
-    // checkLetter() {
-    //
-    // }
-    //
-    // showMatchedLetter(){
-    //
-    // }
+    showMatchedLetter(letter){
+        //Collection of nodes which match the correct letter
+        const charsCollection = Array.from(document.querySelectorAll(`.${letter}`))
+
+       charsCollection.forEach( char => {
+               char.classList.remove("hide");
+               char.classList.add("show");
+
+       })
+
+    }
 }
-//testing
-// const test = new Phrase("Hello World")
-// test.addPhraseToDisplay()
 
 
 export {Phrase}
