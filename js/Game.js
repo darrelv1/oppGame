@@ -37,6 +37,7 @@ class Game {
     }
     //checks for wins
     handleInteraction(letterObj) {
+        letterObj.disabled = true;
         if (this.activePhrase.checkLetter(letterObj.innerText)) {
             letterObj.classList.add("chosen");
             this.activePhrase.showMatchedLetter(letterObj.innerText)
@@ -92,6 +93,7 @@ class Game {
         const allKeys = Array.from(document.querySelectorAll(".key"))
 
         allKeys.forEach(ele => {
+                ele.disabled = false;
                 ele.classList.contains("wrong") && ele.classList.remove("wrong")
                 ele.classList.contains("chosen") && ele.classList.remove("chosen")
             }
